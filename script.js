@@ -1,4 +1,4 @@
-var r1
+var r1= "";
 
 // Constructor de recetas
 function receta(nombre, ncomensales, ingredientes, cantidad) {
@@ -36,24 +36,50 @@ function crearReceta() {
     document.getElementById("com").value=""
     document.getElementById("in").value=""
     document.getElementById("ingr").value=""
+   
+
+    if(r1.ingredientes.length != r1.cantidad.length){
+
+        r1 = ""
+
+        alert("Crear bien la receta")
+
+    }
+
     console.log(r1);
 }
 
-// Función para modificar ingredientes
+// Función para añadir ingredientes
 function aniade(){
     let ingredienteAModificar = document.getElementById('ingreAMod').value
     let cantidadAModificar = document.getElementById('cantAmod').value
+    if(ingredienteAModificar=="" || cantidadAModificar=="" ){
+        alert("Rellene todos los campos necesarios, por favor");
+        rojo.style.color="red";
+    }
+    else{
     r1.aniadir(ingredienteAModificar,cantidadAModificar);
-    console.log(r1)
+    rojo.style.color="black";
+    }
+    console.log(r1);
+    
     document.getElementById('ingreAMod').value=""
     document.getElementById('cantAmod').value=""
 }
-// Función para modificar ingredientes
+// Función para modificar cantidades
 function modificar(){
     let ingredienteAModificar = document.getElementById('ingreAMod').value
     let cantidadAModificar = document.getElementById('cantAmod').value
+    if(ingredienteAModificar=="" || cantidadAModificar=="" ){
+        alert("Rellene todos los campos necesarios, por favor");
+        rojo2.style.color="red";
+
+    }
+    else{
     r1.modificar(ingredienteAModificar,cantidadAModificar)
-    console.log(r1)
+    rojo2.style.color="black";
+    }
+    console.log(r1);
     document.getElementById('ingreAMod').value=""
     document.getElementById('cantAmod').value=""
 }
@@ -77,6 +103,10 @@ function modificaComensales(){
 }
 // Función para mostrar la receta
 function mostrarReceta(){
+    if(r1==""){
+        alert("No hay ninguna receta disponible")
+    }
+    else{
     document.getElementById('popup').style.width = "100%"
     let cant = ""
     for(let i=0;i<r1.ingredientes.length;i++){
@@ -85,6 +115,7 @@ function mostrarReceta(){
     console.log(cant)
     let res = "Nombre receta: "+r1.nombre+"<br/>Número de comensales: "+r1.ncomensales+"<br/>Ingredientes y sus cantidades:<br/>"+cant
     document.getElementById('resultadoReceta').innerHTML = res
+}
 }
 // Función para cerrar el popUp
 function cerrarPop(){

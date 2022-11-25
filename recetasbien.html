@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="popup" class="pop-up">
+        <div class="contenido-popup">
+            <a onclick="cerrarPop()">&times;</a>
+            <div id="resultadoReceta"></div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-superior">
+        </div>
+        <div class="panel-izquierdo">
+            <div>
+                <label for="">Nombre receta: <input type="text" name="" id="nom" placeholder="Nombre receta"></label>
+            </div>
+            <div>
+                <label for="">Número de comensales: <input type="number" name="" id="com" placeholder="Nº"></label>
+            </div>
+            <div>
+                <label for="">Ingredientes: <input type="text" name="" id="in" placeholder="Ingredientes"></label>
+            </div>
+            <div>
+                <label for="">Cantidad por ingredientes: <input type="text" name="" id="ingr"
+                        placeholder="Cantidad"></label>
+            </div>
+            <p onclick="crearReceta()" class="crear">
+                Crear receta
+            </p>
+        </div>
+        <div class="panel-derecho">
+            <div>
+                <label for="" id="rojo2">Añadir ingrediente: <input type="text" name="" id="ingreAMod"
+                        placeholder="Añadir ingrediente"></label>
+            </div>
+            <div>
+                <label for="" id="rojo">Cantidad: <input type="text" name="" id="cantAmod" placeholder="Introduzca la cantidad en gramos" required></label>
+            </div>
+            <div>
+                <p onclick="aniade()">Añadir ingrediente</p>
+                <p onclick="modificar()">Modificar cantidad</p>
+            </div>
+            <div>
+                <label for="">Eliminar ingrediente: <input type="text" name="" id="ingeliminar"
+                        placeholder="Eliminar ingrediente"></label>
+                <p onclick="eliminar()">Eliminar ingrediente</p>
+            </div>
+            <div>
+                <label for="">Modificar número de comensales: <input type="text" name="" id="comenModif"
+                        placeholder="MModificar comensales"></label>
+                <p onclick="modificaComensales()">Modificar</p>
+            </div>
+            <p onclick="mostrarReceta()">Visualizar receta</p>
+        </div>
+    </div>
+</body>
+
+</html>
